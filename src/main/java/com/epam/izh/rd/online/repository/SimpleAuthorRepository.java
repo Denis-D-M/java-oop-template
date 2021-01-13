@@ -8,7 +8,7 @@ public class SimpleAuthorRepository implements AuthorRepository {
     Author[] authors = new Author[]{};
     @Override
     public boolean save(Author author) {
-        if (findByFullName(author.getName(), author.getLastName()) == null) {
+        if (findByFullName(author.getName(), author.getLastName()) != null) {
             return false;
         }
         authors = Arrays.copyOf(authors, authors.length + 1);
