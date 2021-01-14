@@ -4,7 +4,7 @@ import com.epam.izh.rd.online.entity.SchoolBook;
 
 import java.util.Arrays;
 
-public class SimpleSchoolBookRepository implements BookRepository<SchoolBook>{
+public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
     private SchoolBook[] schoolBooks = new SchoolBook[]{};
 
     @Override
@@ -16,13 +16,13 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook>{
 
     @Override
     public SchoolBook[] findByName(String name) {
-        return  Arrays.stream(schoolBooks).filter(schoolBook -> name.equals(schoolBook.getName())).toArray(SchoolBook[]::new);
+        return Arrays.stream(schoolBooks).filter(schoolBook -> name.equals(schoolBook.getName())).toArray(SchoolBook[]::new);
     }
 
     @Override
     public boolean removeByName(String name) {
         SchoolBook[] booksToRemove = findByName(name);
-        if (booksToRemove.length == 0){
+        if (booksToRemove.length == 0) {
             return false;
         }
         SchoolBook[] newArray = new SchoolBook[schoolBooks.length - booksToRemove.length];

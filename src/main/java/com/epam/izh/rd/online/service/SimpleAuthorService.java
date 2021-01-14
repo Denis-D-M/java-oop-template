@@ -3,8 +3,9 @@ package com.epam.izh.rd.online.service;
 import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.repository.AuthorRepository;
 
-public class SimpleAuthorService implements AuthorService{
+public class SimpleAuthorService implements AuthorService {
     private AuthorRepository authorRepository;
+
     @Override
     public boolean save(Author author) {
         return authorRepository.save(author);
@@ -12,7 +13,7 @@ public class SimpleAuthorService implements AuthorService{
 
     @Override
     public Author findByFullName(String name, String lastname) {
-        return authorRepository.findByFullName(name,lastname);
+        return authorRepository.findByFullName(name, lastname);
     }
 
     @Override
