@@ -1,5 +1,8 @@
 package com.epam.izh.rd.online.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -19,6 +22,8 @@ import java.util.Objects;
  * 5) Переопределить методы equals и hashCode - используйте генерацию (не забывайте alt+inset)
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
+@Getter
+@Setter
 public class SchoolBook extends Book {
     private String authorName;
     private String authorLastName;
@@ -31,30 +36,6 @@ public class SchoolBook extends Book {
         super(numberOfPages, name);
         this.authorName = authorName;
         this.authorLastName = authorLastName;
-        this.publishDate = publishDate;
-    }
-
-    public String getAuthorName() {
-        return authorName;
-    }
-
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
-    }
-
-    public String getAuthorLastName() {
-        return authorLastName;
-    }
-
-    public void setAuthorLastName(String authorLastName) {
-        this.authorLastName = authorLastName;
-    }
-
-    public LocalDate getPublishDate() {
-        return publishDate;
-    }
-
-    public void setPublishDate(LocalDate publishDate) {
         this.publishDate = publishDate;
     }
 
